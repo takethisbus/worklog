@@ -9,32 +9,16 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import ReceiptLongRoundedIcon from "@mui/icons-material/ReceiptLongRounded";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme";
+import styled from "@emotion/styled";
 
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-const theme = createTheme({
-  palette: {
-    mode: "dark"
+const InputTextStyled = styled(TextField)({
+  "&": {
+    backgroundColor: "black"
   }
 });
 
@@ -60,8 +44,8 @@ export default function SignIn() {
             alignItems: "center"
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ m: 1, bgcolor: "primary.dark" }}>
+            <ReceiptLongRoundedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -72,7 +56,7 @@ export default function SignIn() {
             noValidate
             sx={{ mt: 1 }}
           >
-            <TextField
+            <InputTextStyled
               margin="normal"
               required
               fullWidth
@@ -82,7 +66,7 @@ export default function SignIn() {
               autoComplete="email"
               autoFocus
             />
-            <TextField
+            <InputTextStyled
               margin="normal"
               required
               fullWidth
@@ -111,14 +95,13 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/sign-up" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
