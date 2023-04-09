@@ -22,3 +22,30 @@ a {
     color-scheme: dark;
   }
 }
+
+.ce-toolbar {
+  color: white;
+}
+
+.ce-toolbar__plus,
+.ce-toolbar__settings-btn {
+  color: white;
+}
+.ce-toolbar__plus:hover,
+.ce-toolbar__settings-btn:hover {
+  color: black;
+}
+
+.ce-toolbox,
+.ce-settings,
+.ce-inline-toolbar {
+  color: black;
+}
+
+.ce-block--selected .ce-block__content {
+  background-color: gray;
+}
+
+::selection {
+  background-color: gray;
+}
