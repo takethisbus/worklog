@@ -49,3 +49,7 @@ a {
 ::selection {
   background-color: gray;
 }
+
+.cdx-checklist__item--checked .cdx-checklist__item-text {
+  text-decoration: line-through;
+}
