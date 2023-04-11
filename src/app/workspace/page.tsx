@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -107,7 +107,7 @@ export default function WorkSpace() {
       <AppBar position="absolute" open={open}>
         <Toolbar
           sx={{
-            pr: "24px" // keep right padding when drawer closed
+            pr: "24px"
           }}
         >
           <IconButton
