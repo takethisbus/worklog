@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import styled from "@emotion/styled";
-import { Divider } from "@mui/material";
+import { Form, Logo } from "@components/common";
 
 const InputTextStyled = styled(TextField)({
   "&": {
@@ -20,6 +20,7 @@ export default function SignUp() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    //TODO: SERVER 연결 필요!
     console.log({
       email: data.get("email"),
       password: data.get("password")
@@ -37,24 +38,11 @@ export default function SignUp() {
           alignItems: "center"
         }}
       >
-        <Box
-          sx={{
-            width: 100,
-            height: 100,
-            backgroundImage:
-              "linear-gradient(to right, #434343 0%, black 100%)",
-            textAlign: "center",
-            borderRadius: "50%",
-            marginBottom: "3rem"
-          }}
-        >
-          Work log
-          <Divider />
-        </Box>
+        <Logo />
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+        <Form handleSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <InputTextStyled
@@ -119,7 +107,7 @@ export default function SignUp() {
               </Link>
             </Grid>
           </Grid>
-        </Box>
+        </Form>
       </Box>
     </Container>
   );
